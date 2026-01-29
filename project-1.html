@@ -2,47 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Palm Springs Remodel | SLR Properties</title>
+  <title>Palm Desert – San Luis Rey | SLR Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">SLR Properties</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="hero small">
-  <h1>Palm Springs Mid-Century Remodel</h1>
-</header>
+  <main class="wrap">
+    <section class="pagehead">
+      <h1>Palm Desert – San Luis Rey</h1>
+      <p class="subhead">Coachella Valley renovation · Before / after + construction progress</p>
+    </section>
 
-<main class="container">
-
-  <section>
-    <h2>Before & After</h2>
-
-    <div class="before-after">
-      <div>
-        <h3>Before</h3>
-        <img src="images/before.jpg" alt="Before renovation">
+    <section class="section">
+      <div class="section-title">
+        <h2>Before & After</h2>
+        <p>Primary transformation highlights.</p>
       </div>
 
-      <div>
-        <h3>After</h3>
-        <img src="images/after.jpg" alt="After renovation">
+      <div class="ba-grid">
+        <figure class="shot">
+          <div class="label">Before</div>
+          <img src="before.jpg" alt="Before renovation" loading="lazy">
+          <figcaption>Existing exterior condition prior to renovation.</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="label">After</div>
+          <img src="after.jpg" alt="After renovation" loading="lazy">
+          <figcaption>Updated exterior after renovation.</figcaption>
+        </figure>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Construction Progress</h2>
+        <p>Key moments during the build.</p>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="progress-1.jpg" alt="Construction progress photo 1" loading="lazy">
+          <figcaption>Progress photo</figcaption>
+        </figure>
+        <figure>
+          <img src="progress-2.jpg" alt="Construction progress photo 2" loading="lazy">
+          <figcaption>Progress photo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <a class="backlink" href="index.html">← Back to projects</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
     </div>
-  </section>
+  </footer>
 
-  <section>
-    <h2>Construction Progress</h2>
-    <div class="progress">
-      <img src="images/progress-1.jpg" alt="Progress photo">
-      <img src="images/progress-2.jpg" alt="Progress photo">
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <p><a href="index.html">← Back to home</a></p>
-</footer>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
