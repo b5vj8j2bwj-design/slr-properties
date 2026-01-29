@@ -2,32 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SLR Properties | Home Renovations</title>
+  <title>SLR Properties | Coachella Valley Renovations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">SLR Properties</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="hero">
-  <h1>SLR Properties</h1>
-  <p>Modern home renovations in the Coachella Valley</p>
-</header>
+  <main class="wrap">
+    <section class="home-hero">
+      <h1>Modern Home Renovations in the Coachella Valley</h1>
+      <p>
+        Design-driven remodels with a deep respect for architecture — especially mid-century homes throughout Palm Springs, Palm Desert, and the surrounding desert communities.
+      </p>
+    </section>
 
-<main class="container">
-  <section>
-    <h2>Current Project</h2>
+    <section class="section">
+      <div class="section-title">
+        <h2>Current Project</h2>
+        <p>Before/after transformations and progress documentation.</p>
+      </div>
 
-    <a class="project-card" href="project-1.html">
-      <img src="images/after.jpg" alt="Renovation project after photo">
-      <h3>Palm Springs Mid-Century Remodel</h3>
-      <p>Full interior renovation</p>
-    </a>
-  </section>
-</main>
+      <div class="cards">
+        <a class="card" href="project-1.html">
+          <div class="card-media">
+            <img src="images/after.jpg" alt="Palm Desert – San Luis Rey after photo" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Palm Desert – San Luis Rey</h3>
+            <p>Mid-century renovation · Exterior + interior updates</p>
+            <span class="card-cta">View project →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>© SLR Properties</p>
-</footer>
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
