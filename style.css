@@ -244,6 +244,7 @@ code {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
+  padding-bottom: 6px;
 }
 
 .tile img {
@@ -253,7 +254,6 @@ code {
   display: block;
   background: #f4f4f4;
 }
-
 
 .tile figcaption {
   padding: 10px 12px 12px;
