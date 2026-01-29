@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | SLR Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">SLR Properties</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="pagehead">
+      <h1>About</h1>
+      <p class="subhead">Renovation-focused real estate in the Coachella Valley</p>
+    </section>
+
+    <section class="about">
+      <div class="about-photo">
+        <!-- When you have a headshot, upload it as images/headshot.jpg and replace this box with <img ...> -->
+        <div class="photo-placeholder">
+          Headshot coming soon
+          <div class="photo-sub">Upload: <code>images/headshot.jpg</code></div>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <h2>SLR Properties</h2>
+        <p>
+          SLR Properties is a renovation-focused real estate company based in the Coachella Valley, with a deep appreciation for mid-century homes throughout Palm Springs and the surrounding desert communities.
+        </p>
+        <p>
+          I’m drawn to properties with strong architectural identity — clean lines, thoughtful layouts, and a real sense of place. Many of the homes I work on have incredible bones but need careful restoration and modern refinement.
+        </p>
+        <p>
+          Each renovation is approached with intention, patience, and attention to detail. The goal is always to honor the original architecture while adapting the home for modern living.
+        </p>
+
+        <div class="about-note">
+          Want to work with SLR Properties? Add a contact section next and I’ll wire it up cleanly.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
