@@ -34,8 +34,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(246, 241, 232, 0.94); /* blends with page */
-  backdrop-filter: blur(10px);
+  background: var(--bg);          /* solid so texture won’t show */
   border-bottom: 1px solid var(--line);
 }
 
@@ -44,7 +43,23 @@ body {
   background-image: radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+.brand {
+  display: flex;
+  align-items: center;
+}
 
+.logo {
+  height: 68px;
+  width: auto;
+  display: block;
+}
+
+/* clean plate so the logo never looks noisy */
+.logo-plate {
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
 .topbar-inner {
   display: flex;
   justify-content: space-between;
