@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
+  padding: 26px 0;
 }
 
 .brand {
@@ -367,16 +367,25 @@ body {
   opacity: 0.7;
 }
 /* ===============================
-   Logo
+   Logo – intentional, designed-in
 =============================== */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  height: 42px;
+  height: 68px;          /* was too small before */
   width: auto;
   display: block;
 }
 
+/* Mobile tuning */
 @media (max-width: 520px) {
   .logo {
-    height: 34px;
+    height: 52px;
   }
+}
+.logo {
+  mix-blend-mode: multiply;
 }
