@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Palm Desert – San Luis Rey | Before & After | SLR Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">SLR Properties</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="pagehead">
+      <h1>Palm Desert – San Luis Rey</h1>
+      <p class="subhead">Before & After comparison · Drag the slider</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Before & After</h2>
+        <p>Replace <code>images/after.jpg</code> later with the final photo (same filename).</p>
+      </div>
+
+      <div class="ba-slider" id="ba">
+        <!-- Base image (BEFORE) -->
+        <img class="ba-img ba-before" src="images/before.jpg" alt="Before renovation">
+
+        <!-- Overlay (AFTER) -->
+        <div class="ba-after-wrap" id="baAfterWrap">
+          <img class="ba-img ba-after" src="images/after.jpg" alt="After renovation (placeholder)">
+        </div>
+
+        <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Before after slider">
+        <div class="ba-handle" id="baHandle" aria-hidden="true"></div>
+
+        <div class="ba-badges" aria-hidden="true">
+          <span>Before</span>
+          <span>After</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <a class="backlink" href="project-1.html">View Progress page →</a>
+      <br><br>
+      <a class="backlink" href="index.html">← Back to projects</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const range = document.getElementById("baRange");
+    const afterWrap = document.getElementById("baAfterWrap");
+    const handle = document.getElementById("baHandle");
+
+    function setSlider(v) {
+      afterWrap.style.width = v + "%";
+      handle.style.left = v + "%";
+    }
+    setSlider(range.value);
+    range.addEventListener("input", (e) => setSlider(e.target.value));
+  </script>
+</body>
+</html>
