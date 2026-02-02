@@ -34,7 +34,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--bg);          /* solid so texture won’t show */
+  background: #1c1f22; /* solid dark */
   border-bottom: 1px solid var(--line);
 }
 
@@ -416,4 +416,30 @@ body {
 }
 .card-media-link:hover {
   opacity: 0.98;
+}
+/* ===============================
+   Logo – dark mode solution
+=============================== */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-plate {
+  background: #f6f1e8;        /* warm light plate for gold logo */
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Mobile scale */
+@media (max-width: 520px) {
+  .logo {
+    height: 44px;
+  }
 }
