@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Palm Desert – San Luis Rey | SLR Properties</title>
+  <title>Palm Desert – San Luis Rey | Construction Progress | SLR Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Top Nav -->
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand logo-plate" href="index.html">
-  <img src="images/logo.png" alt="SLR Property" class="logo">
-</a>
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="SLR Property" class="logo">
+      </a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -24,37 +23,13 @@
   <main class="wrap">
     <section class="pagehead">
       <h1>Palm Desert – San Luis Rey</h1>
-      <p class="subhead">Coachella Valley renovation · Mid-century inspired modernization</p>
+      <p class="subhead">Construction progress documentation · Updated throughout the renovation</p>
     </section>
 
-    <!-- BEFORE / AFTER SLIDER -->
-    <section class="section">
-      <div class="section-title">
-        <h2>Before & After</h2>
-        <p>Drag the slider to compare.</p>
-      </div>
-
-      <div class="ba-slider" id="ba">
-        <img class="ba-img ba-before" src="images/after.jpg" alt="After renovation">
-<div class="ba-after-wrap" id="baAfterWrap">
-  <img class="ba-img ba-after" src="images/before.jpg" alt="Before renovation">
-</div>
-
-        <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Before after slider">
-        <div class="ba-handle" id="baHandle" aria-hidden="true"></div>
-
-        <div class="ba-badges" aria-hidden="true">
-          <span>Before</span>
-          <span>After</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROGRESS GALLERY (AUTO) -->
     <section class="section">
       <div class="section-title">
         <h2>Construction Progress</h2>
-        <p>Key moments during the build. (Auto-generated from your images folder.)</p>
+        <p>Photo log of demolition, build-out, and finishes in progress.</p>
       </div>
 
       <div class="gallery" id="progressGallery"></div>
@@ -76,26 +51,9 @@
   </footer>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ===== Before/After Slider =====
-    const range = document.getElementById("baRange");
-    const afterWrap = document.getElementById("baAfterWrap");
-    const handle = document.getElementById("baHandle");
-
-    function setSlider(v) {
-      afterWrap.style.width = v + "%";
-      handle.style.left = v + "%";
-    }
-    setSlider(range.value);
-
-    range.addEventListener("input", (e) => setSlider(e.target.value));
-
-    // ===== Progress Gallery (Auto) =====
-    // Set this to how many progress photos you currently have uploaded:
-    const PROGRESS_COUNT = 49; // <-- change to 40 when you upload 40 photos
-
+    const PROGRESS_COUNT = 45; // <-- change as you add more photos
     const gallery = document.getElementById("progressGallery");
 
     function pad2(n) { return String(n).padStart(2, "0"); }
