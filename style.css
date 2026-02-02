@@ -2,12 +2,12 @@
    Base
 =============================== */
 :root{
-  /* Palm Springs gallery wall */
-  --bg: #f6f1e8;        /* warm sand / paper */
-  --card: #fbf7f1;      /* lighter surface for cards */
-  --ink: #1f1f1f;       /* primary text */
-  --muted: #6b655b;     /* secondary text */
-  --line: #e3dacd;      /* soft borders */
+  /* Dark architectural metal palette */
+  --bg: #1c1f22;        /* main background (metal gray) */
+  --card: #24282d;      /* card surfaces */
+  --ink: #f1f1f1;       /* primary text */
+  --muted: #a6abb1;     /* secondary text */
+  --line: #343a40;      /* borders / dividers */
   --radius: 16px;
 }
 
