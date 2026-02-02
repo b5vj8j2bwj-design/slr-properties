@@ -4,15 +4,18 @@
   <meta charset="UTF-8" />
   <title>Palm Desert – San Luis Rey | Construction Progress | SLR Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand" href="index.html">
+      <a class="brand logo-plate" href="index.html">
         <img src="images/logo.png" alt="SLR Property" class="logo">
       </a>
+
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -20,23 +23,23 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="wrap">
     <section class="pagehead">
       <h1>Palm Desert – San Luis Rey</h1>
-      <p class="subhead">Construction progress documentation · Updated throughout the renovation</p>
+      <p class="subhead">
+        Construction progress documentation · Updated throughout the renovation
+      </p>
     </section>
 
+    <!-- PROGRESS GALLERY -->
     <section class="section">
       <div class="section-title">
         <h2>Construction Progress</h2>
-        <p>Photo log of demolition, build-out, and finishes in progress.</p>
+        <p>Demolition, build-out, and ongoing work.</p>
       </div>
 
       <div class="gallery" id="progressGallery"></div>
-
-      <p class="note">
-        Add photos to <code>images/progress/</code> named <code>01.jpg</code>, <code>02.jpg</code>, etc.
-      </p>
     </section>
 
     <section class="section">
@@ -44,38 +47,40 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const PROGRESS_COUNT = 45; // <-- change as you add more photos
+    // ===== PROGRESS GALLERY AUTO-LOAD =====
+    const PROGRESS_COUNT = 45; // <-- CHANGE THIS NUMBER IF NEEDED
+
     const gallery = document.getElementById("progressGallery");
 
-    function pad2(n) { return String(n).padStart(2, "0"); }
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
 
     for (let i = 1; i <= PROGRESS_COUNT; i++) {
-      const file = `images/progress/${pad2(i)}.jpg`;
-
       const figure = document.createElement("figure");
       figure.className = "tile";
 
       const img = document.createElement("img");
-      img.src = file;
+      img.src = `images/progress/${pad2(i)}.jpg`;
       img.alt = `Construction progress ${i}`;
       img.loading = "lazy";
 
-      const cap = document.createElement("figcaption");
-      cap.textContent = `Progress ${i}`;
-
       figure.appendChild(img);
-      figure.appendChild(cap);
       gallery.appendChild(figure);
     }
   </script>
+
 </body>
 </html>
