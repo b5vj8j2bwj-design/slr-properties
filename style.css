@@ -411,3 +411,9 @@ body {
 .logo {
   mix-blend-mode: multiply;
 }
+.card-media-link {
+  display: block;
+}
+.card-media-link:hover {
+  opacity: 0.98;
+}
