@@ -391,55 +391,16 @@ body {
 /* ===============================
    Logo – intentional, designed-in
 =============================== */
-.brand {
-  display: flex;
-  align-items: center;
-}
+.brand { display: flex; align-items: center; }
 
-.logo {
-  height: 68px;          /* was too small before */
+.logo{
+  height: 52px;
   width: auto;
   display: block;
 }
 
-/* Mobile tuning */
-@media (max-width: 520px) {
-  .logo {
-    height: 52px;
-  }
-}
-.logo {
-  mix-blend-mode: multiply;
-}
-.card-media-link {
-  display: block;
-}
-.card-media-link:hover {
-  opacity: 0.98;
-}
-/* ===============================
-   Logo – dark mode solution
-=============================== */
-.brand {
-  display: flex;
-  align-items: center;
+/* mobile */
+@media (max-width: 520px){
+  .logo{ height: 40px; }
 }
 
-.logo-plate {
-  background: #f6f1e8;        /* warm light plate for gold logo */
-  padding: 10px 14px;
-  border-radius: 14px;
-}
-
-.logo {
-  height: 60px;
-  width: auto;
-  display: block;
-}
-
-/* Mobile scale */
-@media (max-width: 520px) {
-  .logo {
-    height: 44px;
-  }
-}
