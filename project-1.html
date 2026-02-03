@@ -4,181 +4,153 @@
   <meta charset="UTF-8" />
   <title>Palm Desert – San Luis Rey | Construction Progress | SLR Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=9" />
+
+  <!-- Cache-buster so GitHub Pages loads new styles -->
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="SLR Property" class="logo">
-      </a>
+<!-- HEADER -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="SLR Property" class="logo">
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-      </nav>
+<!-- MAIN -->
+<main class="wrap">
+
+  <!-- PAGE TITLE -->
+  <section class="pagehead">
+    <h1>Palm Desert – San Luis Rey</h1>
+    <p class="subhead">Before / After comparison and construction progress</p>
+  </section>
+
+  <!-- BEFORE / AFTER SLIDER -->
+  <section class="section">
+    <div class="section-title">
+      <h2>Before & After</h2>
+      <p>Drag the slider to compare. Final photo will be updated when complete.</p>
     </div>
-  </header>
 
-  <!-- MAIN -->
-  <main class="wrap">
-    <section class="pagehead">
-      <h1>Palm Desert – San Luis Rey</h1>
-      <p class="subhead">Before/after comparison + construction progress documentation</p>
-    </section>
+    <div class="ba-slider">
+      <img class="ba-img" src="images/before.jpg" alt="Before renovation">
 
-    <!-- BEFORE / AFTER SLIDER -->
-    <section class="section">
-      <div class="section-title">
-        <h2>Before & After</h2>
-        <p>Drag the slider to compare. Replace <code>images/after.jpg</code> later with the finished photo.</p>
+      <div class="ba-after">
+        <img class="ba-img" src="images/after.jpg" alt="After renovation (placeholder)">
       </div>
 
-      <div class="ba-slider" id="ba">
-        <!-- Base image (BEFORE) -->
-        <img class="ba-img ba-before" src="images/before.jpg" alt="Before renovation">
-
-        <!-- Overlay (AFTER) -->
-        <div class="ba-after-wrap" id="baAfterWrap">
-          <img class="ba-img ba-after" src="images/after.jpg" alt="After renovation (placeholder)">
-        </div>
-
-        <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Before after slider">
-        <div class="ba-handle" id="baHandle" aria-hidden="true"></div>
-
-        <div class="ba-badges" aria-hidden="true">
-          <span>Before</span>
-          <span>After</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONSTRUCTION PROGRESS -->
-    <section class="section">
-      <div class="section-title">
-        <h2>Construction Progress</h2>
-        <p>Photo log updated throughout the renovation.</p>
-      </div>
-
-      <div class="gallery" id="progressGallery"></div>
-    </section>
-
-    <section class="section">
-      <a class="backlink" href="index.html">← Back to projects</a>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
+      <input type="range" min="0" max="100" value="50" class="ba-range">
     </div>
-  </footer>
+  </section>
 
-  <!-- SCRIPTS -->
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- CONSTRUCTION PROGRESS -->
+  <section class="section">
+    <div class="section-title">
+      <h2>Construction Progress</h2>
+      <p>Ongoing documentation throughout the renovation.</p>
+    </div>
 
-    // ===== Before/After Slider =====
-    const range = document.getElementById("baRange");
-    const afterWrap = document.getElementById("baAfterWrap");
-    const handle = document.getElementById("baHandle");
+    <div class="gallery" id="progressGallery"></div>
+  </section>
 
-    function setSlider(v) {
-      afterWrap.style.width = v + "%";
-      handle.style.left = v + "%";
-    }
-    setSlider(range.value);
-    range.addEventListener("input", (e) => setSlider(e.target.value));
+  <section class="section">
+    <a class="backlink" href="index.html">← Back to projects</a>
+  </section>
 
-    // ===== Progress Gallery (Auto) =====
-    const PROGRESS_COUNT = 45; // <-- change this number as you add more photos
+</main>
 
-    const gallery = document.getElementById("progressGallery");
-    function pad2(n) { return String(n).padStart(2, "0"); }
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> SLR Properties · Coachella Valley</p>
+  </div>
+</footer>
 
-    for (let i = 1; i <= PROGRESS_COUNT; i++) {
-      const figure = document.createElement("figure");
-      figure.className = "tile";
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close">✕</button>
+  <button class="lb-prev">‹</button>
+  <img id="lightboxImg" alt="Expanded photo">
+  <button class="lb-next">›</button>
+</div>
 
-      const img = document.createElement("img");
-      img.src = `images/progress/${pad2(i)}.jpg`;
-      img.alt = `Construction progress ${i}`;
-      img.loading = "lazy";
+<script>
+/* ===============================
+   FOOTER YEAR
+=============================== */
+document.getElementById("year").textContent = new Date().getFullYear();
 
-      figure.appendChild(img);
-      gallery.appendChild(figure);
-    }
-    for (let i = 1; i <= PROGRESS_COUNT; i++) {
-  ...
-}
-// ===== Lightbox for progress images =====
-const imgs = Array.from(document.querySelectorAll("#progressGallery img"));
-let lbIndex = 0;
+/* ===============================
+   BEFORE / AFTER SLIDER
+=============================== */
+const slider = document.querySelector(".ba-range");
+const after = document.querySelector(".ba-after");
 
-const lb = document.createElement("div");
-lb.className = "lightbox";
-lb.innerHTML = `
-  <button class="lb-btn lb-close" aria-label="Close">Close ✕</button>
-  <button class="lb-prev" aria-label="Previous">‹</button>
-  <img alt="Expanded progress photo">
-  <button class="lb-next" aria-label="Next">›</button>
-`;
-document.body.appendChild(lb);
-
-const lbImg = lb.querySelector("img");
-const btnClose = lb.querySelector(".lb-close");
-const btnPrev = lb.querySelector(".lb-prev");
-const btnNext = lb.querySelector(".lb-next");
-
-function openLightbox(i){
-  lbIndex = i;
-  lbImg.src = imgs[lbIndex].src;
-  lb.classList.add("open");
-}
-
-function closeLightbox(){
-  lb.classList.remove("open");
-  lbImg.src = "";
-}
-
-function prev(){
-  lbIndex = (lbIndex - 1 + imgs.length) % imgs.length;
-  lbImg.src = imgs[lbIndex].src;
-}
-
-function next(){
-  lbIndex = (lbIndex + 1) % imgs.length;
-  lbImg.src = imgs[lbIndex].src;
-}
-
-imgs.forEach((im, i) => {
-  im.style.cursor = "zoom-in";
-  im.addEventListener("click", () => openLightbox(i));
+slider.addEventListener("input", e => {
+  after.style.width = e.target.value + "%";
 });
 
-btnClose.addEventListener("click", closeLightbox);
-btnPrev.addEventListener("click", prev);
-btnNext.addEventListener("click", next);
+/* ===============================
+   PROGRESS GALLERY
+=============================== */
+const PROGRESS_COUNT = 45; // ← change when you add photos
+const gallery = document.getElementById("progressGallery");
 
-// Click outside image closes
-lb.addEventListener("click", (e) => {
-  if (e.target === lb) closeLightbox();
+function pad(n){ return String(n).padStart(2, "0"); }
+
+for(let i = 1; i <= PROGRESS_COUNT; i++){
+  const img = document.createElement("img");
+  img.src = `images/progress/${pad(i)}.jpg`;
+  img.alt = `Construction progress ${i}`;
+  img.loading = "lazy";
+  gallery.appendChild(img);
+}
+
+/* ===============================
+   LIGHTBOX
+=============================== */
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lightboxImg");
+const imgs = Array.from(gallery.querySelectorAll("img"));
+let index = 0;
+
+imgs.forEach((img, i) => {
+  img.addEventListener("click", () => {
+    index = i;
+    lbImg.src = img.src;
+    lb.classList.add("open");
+  });
 });
 
-// Keyboard controls
-document.addEventListener("keydown", (e) => {
-  if (!lb.classList.contains("open")) return;
-  if (e.key === "Escape") closeLightbox();
-  if (e.key === "ArrowLeft") prev();
-  if (e.key === "ArrowRight") next();
+document.querySelector(".lb-close").onclick = () => lb.classList.remove("open");
+document.querySelector(".lb-prev").onclick = () => {
+  index = (index - 1 + imgs.length) % imgs.length;
+  lbImg.src = imgs[index].src;
+};
+document.querySelector(".lb-next").onclick = () => {
+  index = (index + 1) % imgs.length;
+  lbImg.src = imgs[index].src;
+};
+
+lb.addEventListener("click", e => {
+  if(e.target === lb) lb.classList.remove("open");
 });
 
-  </script>
+document.addEventListener("keydown", e => {
+  if(!lb.classList.contains("open")) return;
+  if(e.key === "Escape") lb.classList.remove("open");
+  if(e.key === "ArrowLeft") document.querySelector(".lb-prev").click();
+  if(e.key === "ArrowRight") document.querySelector(".lb-next").click();
+});
+</script>
 
 </body>
 </html>
