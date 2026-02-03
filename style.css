@@ -1,3 +1,4 @@
+html, body { background: var(--bg); }
 /* ===============================
    Base
 =============================== */
@@ -278,13 +279,13 @@ body {
   overflow: hidden;
 }
 
-.tile img {
+.tile img{
   width: 100%;
   height: auto;
   max-height: 420px;
-  object-fit: contain;
+  object-fit: contain;        /* keeps full phone photos */
   display: block;
-  background: #f4f4f4;
+  background: var(--card);    /* IMPORTANT: removes white edges */
 }
 
 .tile figcaption {
@@ -423,4 +424,65 @@ body {
 }
 
 .card-action:hover{ opacity: 1; }
+/* ===============================
+   Lightbox
+=============================== */
+.tile { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: min(1100px, 96vw);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.lb-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lb-prev, .lb-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+
+@media (max-width: 520px){
+  .lb-prev, .lb-next { width: 40px; height: 40px; }
+}
 
