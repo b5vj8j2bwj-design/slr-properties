@@ -16,7 +16,26 @@
   --radius: 18px;
   --shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
+/* Gold accents */
+.gold { color: var(--accent); }
 
+.kicker { color: rgba(202,164,90,0.95); } /* already gold-ish, keep consistent */
+
+.section-title h2{
+  position: relative;
+  padding-left: 12px;
+}
+
+.section-title h2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 6px;
+  height: 0.9em;
+  border-radius: 99px;
+  background: rgba(202,164,90,0.75);
+}
 *{ box-sizing: border-box; }
 html, body{ background: var(--bg); }
 
